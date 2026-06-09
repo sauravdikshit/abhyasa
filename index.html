@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Privacy Policy | Abhysha</title>
+    <title>Privacy Policy | HabitFlow</title>
     <style>
         /* ----- Theme colors (based on your theme.ts dark mode + COLORS) ----- */
         :root {
@@ -49,10 +48,81 @@
             line-height: 1.5;
             font-weight: 400;
             scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Container */
+        /* ----- DECORATIVE BACKGROUND (inspired by DEFAULT_HABITS) ----- */
+        .habits-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Subtle animated grain / noise texture */
+        .habits-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Floating habit icons – one per default habit, with soft glow & slow float */
+        .habit-float {
+            position: absolute;
+            font-size: clamp(2rem, 8vw, 5rem);
+            opacity: 0.05;
+            color: var(--accent-gold-light);
+            filter: blur(0.5px);
+            animation: floatHabit 20s infinite ease-in-out;
+            user-select: none;
+            pointer-events: none;
+            text-shadow: 0 0 12px rgba(201,168,76,0.2);
+        }
+
+        /* Individual positions and delays */
+        .habit-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 24s; animation-delay: 0s; }  /* 💧 water */
+        .habit-float:nth-child(2) { bottom: 12%; right: 2%; animation-duration: 28s; animation-delay: 2s; } /* 🧘 meditation */
+        .habit-float:nth-child(3) { top: 20%; right: 8%; animation-duration: 22s; animation-delay: 1s; }  /* 🏋️ exercise */
+        .habit-float:nth-child(4) { bottom: 30%; left: 5%; animation-duration: 30s; animation-delay: 3s; } /* 📖 reading */
+        .habit-float:nth-child(5) { top: 45%; left: 12%; animation-duration: 26s; animation-delay: 0.5s; } /* 🚶 walking */
+        .habit-float:nth-child(6) { top: 70%; right: 15%; animation-duration: 32s; animation-delay: 1.8s; } /* ❤️ gratitude */
+        .habit-float:nth-child(7) { bottom: 5%; left: 20%; animation-duration: 27s; animation-delay: 2.5s; } /* 🌙 sleep early */
+        .habit-float:nth-child(8) { top: 85%; right: 25%; animation-duration: 25s; animation-delay: 0.2s; } /* 🍎 healthy eating */
+
+        @keyframes floatHabit {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0.04; }
+            50% { transform: translate(15px, -20px) rotate(5deg); opacity: 0.09; }
+            100% { transform: translate(-5px, 10px) rotate(-3deg); opacity: 0.04; }
+        }
+
+        /* Additional radial gradient overlay for depth */
+        .habits-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(201,168,76,0.02) 0%, rgba(13,13,13,0) 70%);
+            pointer-events: none;
+        }
+
+        /* Container (ensure content stays above background) */
         .container {
+            position: relative;
+            z-index: 1;
             max-width: 860px;
             margin: 0 auto;
             padding: var(--space-xl) var(--space-md);
@@ -92,6 +162,7 @@
             border: 1px solid var(--border-subtle);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: var(--card-shadow);
+            backdrop-filter: blur(0px);
         }
 
         .policy-section:hover {
@@ -121,8 +192,7 @@
             color: var(--text-primary);
         }
 
-        .policy-section ul,
-        .policy-section ol {
+        .policy-section ul, .policy-section ol {
             margin: var(--space-md) 0 var(--space-md) var(--space-lg);
             color: var(--text-secondary);
         }
@@ -201,17 +271,18 @@
             .container {
                 padding: var(--space-lg) var(--space-md);
             }
-
             .hero h1 {
                 font-size: 1.8rem;
             }
-
             .policy-section {
                 padding: var(--space-md) var(--space-lg);
             }
-
             .policy-section h2 {
                 font-size: 1.4rem;
+            }
+            .habit-float {
+                opacity: 0.03;
+                font-size: 3rem;
             }
         }
 
@@ -221,8 +292,20 @@
         }
     </style>
 </head>
-
 <body>
+    <!-- Decorative background inspired by DEFAULT_HABITS -->
+    <div class="habits-bg">
+        <!-- One floating symbol per default habit (order matches DEFAULT_HABITS) -->
+        <div class="habit-float">💧</div>   <!-- Drink Water -->
+        <div class="habit-float">🧘</div>   <!-- Meditation -->
+        <div class="habit-float">🏋️</div>   <!-- Exercise -->
+        <div class="habit-float">📖</div>   <!-- Reading -->
+        <div class="habit-float">🚶</div>   <!-- Walking -->
+        <div class="habit-float">❤️</div>   <!-- Gratitude Journal -->
+        <div class="habit-float">🌙</div>   <!-- Sleep Early -->
+        <div class="habit-float">🍎</div>   <!-- Healthy Eating -->
+    </div>
+
     <div class="container">
         <div class="hero">
             <h1>Privacy Policy</h1>
@@ -236,16 +319,12 @@
             <h2>1. Information We Collect</h2>
             <p>We collect only the information necessary to provide and improve HabitFlow. This includes:</p>
             <ul>
-                <li><strong>Account data:</strong> Email address, username, and hashed password (we never store plain
-                    passwords).</li>
-                <li><strong>Habit tracking data:</strong> Habits, streaks, completions, and custom reminders you create.
-                </li>
-                <li><strong>Usage analytics:</strong> Anonymous usage patterns to improve the app (no personal
-                    identifiers).</li>
+                <li><strong>Account data:</strong> Email address, username, and hashed password (we never store plain passwords).</li>
+                <li><strong>Habit tracking data:</strong> Habits, streaks, completions, and custom reminders you create.</li>
+                <li><strong>Usage analytics:</strong> Anonymous usage patterns to improve the app (no personal identifiers).</li>
                 <li><strong>Device info:</strong> OS version, device model, and app version for troubleshooting.</li>
             </ul>
-            <p>We <strong>do not</strong> collect sensitive data like precise location, contacts, or browsing history.
-            </p>
+            <p>We <strong>do not</strong> collect sensitive data like precise location, contacts, or browsing history.</p>
         </div>
 
         <div class="policy-section">
@@ -262,9 +341,7 @@
 
         <div class="policy-section">
             <h2>3. Data Storage & Security</h2>
-            <p>Your data is stored on secure servers with industry‑standard encryption (AES‑256 at rest, TLS 1.3 in
-                transit). Access is restricted to authorized personnel only. While no system is 100% invulnerable, we
-                regularly audit our security practices.</p>
+            <p>Your data is stored on secure servers with industry‑standard encryption (AES‑256 at rest, TLS 1.3 in transit). Access is restricted to authorized personnel only. While no system is 100% invulnerable, we regularly audit our security practices.</p>
         </div>
 
         <div class="policy-section">
@@ -275,8 +352,7 @@
                 <li><strong>Supabase / Firebase</strong> – (example) for authentication and real‑time database.</li>
                 <li><strong>Sentry</strong> – error tracking (anonymous data only).</li>
             </ul>
-            <p>Each provider complies with GDPR/CCPA where applicable. You can review their policies via our <a
-                    href="#">Subprocessors page</a>.</p>
+            <p>Each provider complies with GDPR/CCPA where applicable. You can review their policies via our <a href="#">Subprocessors page</a>.</p>
         </div>
 
         <div class="policy-section">
@@ -289,51 +365,38 @@
                 <li><strong>Restrict processing</strong> – limit how we use your data.</li>
                 <li><strong>Data portability</strong> – receive your data in a machine‑readable format.</li>
             </ul>
-            <p>To exercise any right, use the <a href="#data-deletion">Data Deletion Request</a> section below or
-                contact us directly.</p>
+            <p>To exercise any right, use the <a href="#data-deletion">Data Deletion Request</a> section below or contact us directly.</p>
         </div>
 
         <div class="policy-section data-deletion-card" id="data-deletion">
             <h2>🗑️ Data Deletion & Requests</h2>
-            <p>If you wish to delete your account and all personal data, or make any other privacy request, please email
-                us from your registered email address:</p>
+            <p>If you wish to delete your account and all personal data, or make any other privacy request, please email us from your registered email address:</p>
             <div class="email-highlight">privacy@habitflow.app</div>
-            <p>Include the subject line: <strong>"Data Deletion Request"</strong> or <strong>"Privacy Request"</strong>
-                – and mention your account email. We will process your request within <strong>30 days</strong> and send
-                a confirmation once completed.</p>
-            <p>You may also delete your account directly inside the HabitFlow app: <strong>Settings → Account → Delete
-                    Account</strong>.</p>
-            <a href="mailto:privacy@habitflow.app?subject=Data%20Deletion%20Request" class="btn-outline">✉️ Request via
-                Email</a>
+            <p>Include the subject line: <strong>"Data Deletion Request"</strong> or <strong>"Privacy Request"</strong> – and mention your account email. We will process your request within <strong>30 days</strong> and send a confirmation once completed.</p>
+            <p>You may also delete your account directly inside the HabitFlow app: <strong>Settings → Account → Delete Account</strong>.</p>
+            <a href="mailto:privacy@habitflow.app?subject=Data%20Deletion%20Request" class="btn-outline">✉️ Request via Email</a>
         </div>
 
         <div class="policy-section">
             <h2>6. Cookies & Tracking</h2>
-            <p>HabitFlow uses essential cookies only for authentication and preferences. We do not use advertising or
-                analytics cookies. You can manage cookie settings in your browser, but disabling them may affect login
-                functionality.</p>
+            <p>HabitFlow uses essential cookies only for authentication and preferences. We do not use advertising or analytics cookies. You can manage cookie settings in your browser, but disabling them may affect login functionality.</p>
         </div>
 
         <div class="policy-section">
             <h2>7. Children's Privacy</h2>
-            <p>HabitFlow is not intended for children under 13. We do not knowingly collect data from minors. If you
-                believe a child has provided us with personal information, contact us immediately for removal.</p>
+            <p>HabitFlow is not intended for children under 13. We do not knowingly collect data from minors. If you believe a child has provided us with personal information, contact us immediately for removal.</p>
         </div>
 
         <div class="policy-section">
             <h2>8. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy occasionally. Material changes will be notified via in‑app notification
-                or email. The “Last updated” date at the top indicates when the policy was last revised. Continued use
-                of HabitFlow after changes constitutes acceptance.</p>
+            <p>We may update this Privacy Policy occasionally. Material changes will be notified via in‑app notification or email. The “Last updated” date at the top indicates when the policy was last revised. Continued use of HabitFlow after changes constitutes acceptance.</p>
         </div>
 
         <div class="footer">
             <p>HabitFlow – Build better habits, one day at a time.</p>
-            <p>📍 Questions? <a href="mailto:privacy@habitflow.app">privacy@habitflow.app</a> | <a href="#">Data
-                    Deletion Page</a></p>
+            <p>📍 Questions? <a href="mailto:privacy@habitflow.app">privacy@habitflow.app</a> | <a href="#">Data Deletion Page</a></p>
             <p style="margin-top: var(--space-sm); font-size: 0.75rem;">© 2026 HabitFlow. All rights reserved.</p>
         </div>
     </div>
 </body>
-
 </html>
