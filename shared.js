@@ -1,5 +1,5 @@
-(function () {
-  /* All files are in the same flat directory — no subfolders */
+(function() {
+  // Enhanced navigation HTML (more attractive & semantic)
   var NAV =
     '<nav id="navbar">' +
     '  <a href="index.html" class="nav-logo">' +
@@ -10,12 +10,12 @@
     '    <span></span><span></span><span></span>' +
     '  </button>' +
     '  <ul class="nav-links" id="navLinks">' +
-    '    <li><a href="index.html">Home</a></li>' +
-    '    <li><a href="about.html">About Us</a></li>' +
-    '    <li><a href="privacy.html">Privacy Policy</a></li>' +
-    '    <li><a href="data-delete.html">Data Deletion</a></li>' +
-    '    <li><a href="feedback.html">Feedback</a></li>' +
-    '    <li><a href="index.html#download" class="cta-btn">Get the App</a></li>' +
+    '    <li><a href="index.html" data-nav="home">Home</a></li>' +
+    '    <li><a href="about.html" data-nav="about">About Us</a></li>' +
+    '    <li><a href="privacy.html" data-nav="privacy">Privacy Policy</a></li>' +
+    '    <li><a href="data-delete.html" data-nav="delete">Data Deletion</a></li>' +
+    '    <li><a href="feedback.html" data-nav="feedback">Feedback</a></li>' +
+    '    <li><a href="index.html#download" class="cta-btn">✨ Get the App</a></li>' +
     '  </ul>' +
     '</nav>';
 
@@ -46,52 +46,101 @@
     '</footer>';
 
   function init() {
+    // Inject nav and footer
     document.body.insertAdjacentHTML('afterbegin', NAV);
     document.body.insertAdjacentHTML('beforeend', FOOTER);
 
-    /* Scroll effect */
-    var navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', function () {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    /* Mobile toggle */
-    var toggle = document.getElementById('navToggle');
-    var links = document.getElementById('navLinks');
-
-    toggle.addEventListener('click', function () {
-      var isOpen = links.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    /* Close on link click */
-    links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    /* Close on outside click */
-    document.addEventListener('click', function (e) {
-      if (!navbar.contains(e.target)) {
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+    // --- Active link highlight based on current URL ---
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const allNavLinks = document.querySelectorAll('.nav-links a');
+    allNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Compare current file with link href (handle root, index, and anchor links)
+      let linkPath = href.split('#')[0];
+      if (linkPath === '') linkPath = 'index.html';
+      if (currentPath === linkPath || (currentPath === '' && linkPath === 'index.html')) {
+        link.classList.add('active-link');
+      }
+      // For root domain case
+      if ((currentPath === '/' || currentPath === '') && linkPath === 'index.html') {
+        link.classList.add('active-link');
       }
     });
 
-    /* Scroll reveal */
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) e.target.classList.add('visible');
+    // --- Scroll effect (adds 'scrolled' class) ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 20) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // --- Mobile toggle with body scroll lock and smooth close ---
+    const toggle = document.getElementById('navToggle');
+    const linksContainer = document.getElementById('navLinks');
+    const body = document.body;
+
+    function closeMenu() {
+      linksContainer.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('menu-open');
+    }
+
+    function openMenu() {
+      linksContainer.classList.add('open');
+      toggle.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      body.classList.add('menu-open');
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (linksContainer.classList.contains('open')) closeMenu();
+        else openMenu();
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    }
+
+    // Close menu when a nav link is clicked (on mobile)
+    const allLinks = document.querySelectorAll('.nav-links a');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+        // Optional: smooth scroll for anchor links without page jump
+        if (this.getAttribute('href') && this.getAttribute('href').includes('#download')) {
+          e.preventDefault();
+          const target = document.getElementById('download');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Close menu when clicking outside the navbar (on mobile)
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768 && linksContainer.classList.contains('open')) {
+        if (!navbar.contains(e.target)) closeMenu();
+      }
+    });
+
+    // Re-close on window resize if menu was open (avoid layout glitches)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768 && linksContainer.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    // --- Scroll Reveal Animation (same as original but improved) ---
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   }
 
+  // Run after DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
