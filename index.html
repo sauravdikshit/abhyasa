@@ -18,30 +18,27 @@
       position: relative;
       overflow: hidden;
     }
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0; overflow: hidden;
+   .hero-bg {
+      position:absolute; inset:0; z-index:0;
+      overflow:hidden;
     }
-    /* Abhyasa image as full background */
+    /* grid pattern */
     .hero-bg::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url('abhyasa-bg.png');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      opacity: 0.55;
+      content:'';
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
     }
-    /* Dark gradient overlay so text stays readable */
+    /* glow blobs */
     .hero-bg::after {
-      content: '';
-      position: absolute; inset: 0;
+      content:'';
+      position:absolute; inset:0;
       background:
-        linear-gradient(to bottom,
-          rgba(13,13,13,0.45) 0%,
-          rgba(13,13,13,0.15) 40%,
-          rgba(13,13,13,0.55) 80%,
-          rgba(13,13,13,0.92) 100%),
-        radial-gradient(ellipse 70% 50% at 50% 50%, transparent 30%, rgba(13,13,13,0.4) 100%);
+        radial-gradient(circle at 20% 30%, rgba(201,168,76,0.07) 0%, transparent 45%),
+        radial-gradient(circle at 80% 60%, rgba(212,135,90,0.06) 0%, transparent 40%);
     }
 
     .hero-content { position: relative; z-index: 1; max-width: 760px; }
