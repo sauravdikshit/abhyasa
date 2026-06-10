@@ -1,12 +1,8 @@
-/* shared.js – injects nav + footer, handles scroll, toggle, and reveal */
 (function () {
-  /* Determine path prefix: pages/ subfolder uses '../', root uses '' */
-  var isSubpage = window.location.pathname.indexOf('/pages/') !== -1;
-  var root = isSubpage ? '../' : '';
-
+  /* All files are in the same flat directory — no subfolders */
   var NAV =
     '<nav id="navbar">' +
-    '  <a href="' + root + 'index.html" class="nav-logo">' +
+    '  <a href="index.html" class="nav-logo">' +
     '    <div class="nav-logo-icon">🌿</div>' +
     '    <span class="nav-logo-text">Habit<span>Flow</span></span>' +
     '  </a>' +
@@ -14,12 +10,12 @@
     '    <span></span><span></span><span></span>' +
     '  </button>' +
     '  <ul class="nav-links" id="navLinks">' +
-    '    <li><a href="' + root + 'index.html">Home</a></li>' +
-    '    <li><a href="' + root + 'about.html">About Us</a></li>' +
-    '    <li><a href="' + root + 'privacy.html">Privacy Policy</a></li>' +
-    '    <li><a href="' + root + 'data-delete.html">Data Deletion</a></li>' +
-    '    <li><a href="' + root + 'feedback.html">Feedback</a></li>' +
-    '    <li><a href="' + root + 'index.html#download" class="cta-btn">Get the App</a></li>' +
+    '    <li><a href="index.html">Home</a></li>' +
+    '    <li><a href="about.html">About Us</a></li>' +
+    '    <li><a href="privacy.html">Privacy Policy</a></li>' +
+    '    <li><a href="data-delete.html">Data Deletion</a></li>' +
+    '    <li><a href="feedback.html">Feedback</a></li>' +
+    '    <li><a href="index.html#download" class="cta-btn">Get the App</a></li>' +
     '  </ul>' +
     '</nav>';
 
@@ -32,14 +28,14 @@
     '    </div>' +
     '    <div class="footer-col">' +
     '      <h4>Pages</h4>' +
-    '      <a href="' + root + 'index.html">Home</a>' +
-    '      <a href="' + root + 'about.html">About Us</a>' +
-    '      <a href="' + root + 'feedback.html">Feedback</a>' +
+    '      <a href="index.html">Home</a>' +
+    '      <a href="about.html">About Us</a>' +
+    '      <a href="feedback.html">Feedback</a>' +
     '    </div>' +
     '    <div class="footer-col">' +
     '      <h4>Legal</h4>' +
-    '      <a href="' + root + 'privacy.html">Privacy Policy</a>' +
-    '      <a href="' + root + 'data-delete.html">Data Deletion</a>' +
+    '      <a href="privacy.html">Privacy Policy</a>' +
+    '      <a href="data-delete.html">Data Deletion</a>' +
     '      <a href="mailto:sauravkumar937@gmail.com">Contact</a>' +
     '    </div>' +
     '  </div>' +
