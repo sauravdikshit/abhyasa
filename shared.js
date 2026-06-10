@@ -15,10 +15,10 @@
     '  </button>' +
     '  <ul class="nav-links" id="navLinks">' +
     '    <li><a href="' + root + 'index.html">Home</a></li>' +
-    '    <li><a href="' + root + 'pages/about.html">About Us</a></li>' +
-    '    <li><a href="' + root + 'pages/privacy.html">Privacy Policy</a></li>' +
-    '    <li><a href="' + root + 'pages/data-delete.html">Data Deletion</a></li>' +
-    '    <li><a href="' + root + 'pages/feedback.html">Feedback</a></li>' +
+    '    <li><a href="' + root + 'about.html">About Us</a></li>' +
+    '    <li><a href="' + root + 'privacy.html">Privacy Policy</a></li>' +
+    '    <li><a href="' + root + 'data-delete.html">Data Deletion</a></li>' +
+    '    <li><a href="' + root + 'feedback.html">Feedback</a></li>' +
     '    <li><a href="' + root + 'index.html#download" class="cta-btn">Get the App</a></li>' +
     '  </ul>' +
     '</nav>';
@@ -33,13 +33,13 @@
     '    <div class="footer-col">' +
     '      <h4>Pages</h4>' +
     '      <a href="' + root + 'index.html">Home</a>' +
-    '      <a href="' + root + 'pages/about.html">About Us</a>' +
-    '      <a href="' + root + 'pages/feedback.html">Feedback</a>' +
+    '      <a href="' + root + 'about.html">About Us</a>' +
+    '      <a href="' + root + 'feedback.html">Feedback</a>' +
     '    </div>' +
     '    <div class="footer-col">' +
     '      <h4>Legal</h4>' +
-    '      <a href="' + root + 'pages/privacy.html">Privacy Policy</a>' +
-    '      <a href="' + root + 'pages/data-delete.html">Data Deletion</a>' +
+    '      <a href="' + root + 'privacy.html">Privacy Policy</a>' +
+    '      <a href="' + root + 'data-delete.html">Data Deletion</a>' +
     '      <a href="mailto:sauravkumar937@gmail.com">Contact</a>' +
     '    </div>' +
     '  </div>' +
