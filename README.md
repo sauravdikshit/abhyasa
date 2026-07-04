@@ -74,9 +74,9 @@ Just honest habit tracking designed to help people improve one day at a time.
 
 <div align="center">
 
-| Home | Habit Details |
+| Home | Add Habit |
 |------|---------------|
-| <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202501/Screenshot_1783202272_nqay7r.png" width="260"> | <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202503/Screenshot_1783202339_at5k3f.png" width="260"> |
+| <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202501/Screenshot_1783202272_nqay7r.png" width="260"> | <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202501/Screenshot_1783202363_pyfv6b.png" width="260"> |
 
 | Statistics | Lessons |
 |------------|---------|
