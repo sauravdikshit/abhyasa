@@ -304,60 +304,7 @@ Abhyasa
 └── User Profile
 ```
 
----
 
-# 📦 Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/yourusername/abhyasa.git
-```
-
-```bash
-cd abhyasa
-```
-
-## Install Dependencies
-
-```bash
-npm install
-```
-
-or
-
-```bash
-yarn install
-```
-
-## Start Development Server
-
-```bash
-npx expo start
-```
-
----
-
-# 🔥 Firebase Setup
-
-Create a Firebase project and configure:
-
-- Authentication
-- Firestore
-- Cloud Messaging
-
-Add Firebase configuration:
-
-```env
-EXPO_PUBLIC_FIREBASE_API_KEY=
-EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=
-EXPO_PUBLIC_FIREBASE_PROJECT_ID=
-EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=
-EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-EXPO_PUBLIC_FIREBASE_APP_ID=
-```
-
----
 
 # 🌍 Roadmap
 
@@ -412,7 +359,7 @@ Every practice begins with a single step.
 
 ### Practice • Reflect • Transform
 
-<img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1781109047/abhyasa-bg_inpz2c.png" width="100%" />
+<img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1781118459/topic_bnr_wpdez5.png" width="100%" />
 
 ### Build streaks that keep you motivated. Stay mindful with gentle reminders.
 
