@@ -3,11 +3,18 @@
   var NAV =
     '<nav id="navbar">' +
     '  <a href="index.html" class="nav-logo">' +
-    '  <div class="nav-logo-icon">' +
-    '      <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1780486723/c8445862-fd4b-45d8-ac47-d380d101db9d_gbwmtf.webp" alt="Abhyasa Logo" />' +
-    '    </div>' +
-    '    <span class="nav-logo-text">Abhy<span>asa</span></span>' +
-    '  </a>' +
+'    <div class="nav-logo-icon">' +
+'      <img ' +
+'        src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1780486723/c8445862-fd4b-45d8-ac47-d380d101db9d_gbwmtf.webp" ' +
+'        alt="Abhyasa Logo" ' +
+'        width="48" ' +
+'        height="48" ' +
+'        loading="eager" ' +
+'        decoding="async" ' +
+'      />' +
+'    </div>' +
+'    <span class="nav-logo-text">Abhy<span>asa</span></span>' +
+'  </a>' +
     '  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">' +
     '    <span></span><span></span><span></span>' +
     '  </button>' +
@@ -24,10 +31,13 @@
   var FOOTER =
     '<footer>' +
     '  <div class="footer-inner">' +
-    '    <div class="footer-brand">' +
-    '      <span class="brand-name">Abhy<span>asa</span></span>' +
-    '      <p>Build better habits, one day at a time.</p>' +
-    '    </div>' +
+    '     <div class="footer-brand">' +
+'      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
+'        <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1780486723/c8445862-fd4b-45d8-ac47-d380d101db9d_gbwmtf.webp" alt="Abhyasa Logo" width="42" height="42" style="border-radius:12px;" />' +
+'        <span class="brand-name">Abhy<span>asa</span></span>' +
+'      </div>' +
+'      <p>Build better habits, one day at a time.</p>' +
+'    </div>' +
     '    <div class="footer-col">' +
     '      <h4>Pages</h4>' +
     '      <a href="index.html">Home</a>' +
