@@ -4,7 +4,7 @@
     '<nav id="navbar">' +
     '  <a href="index.html" class="nav-logo">' +
     '    <div class="nav-logo-icon">🌿</div>' +
-    '    <span class="nav-logo-text">Habit<span>Flow</span></span>' +
+    '    <span class="nav-logo-text">Abhyasa<span>App</span></span>' +
     '  </a>' +
     '  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">' +
     '    <span></span><span></span><span></span>' +
@@ -23,7 +23,7 @@
     '<footer>' +
     '  <div class="footer-inner">' +
     '    <div class="footer-brand">' +
-    '      <span class="brand-name">Habit<span>Flow</span></span>' +
+    '      <span class="brand-name">Abhyasa<span>App</span></span>' +
     '      <p>Build better habits, one day at a time.</p>' +
     '    </div>' +
     '    <div class="footer-col">' +
@@ -40,8 +40,8 @@
     '    </div>' +
     '  </div>' +
     '  <div class="footer-bottom">' +
-    '    <p>&copy; 2026 HabitFlow. All rights reserved.</p>' +
-    '    <span class="footer-badge">🌿 Made with intention</span>' +
+    '    <p>&copy; 2026 Abhyasa. All rights reserved.</p>' +
+    '    <span class="footer-badge">🌿 Made with SAURAV DIKSHIT</span>' +
     '  </div>' +
     '</footer>';
 
