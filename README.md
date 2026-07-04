@@ -76,11 +76,11 @@ Just honest habit tracking designed to help people improve one day at a time.
 
 | Home | Habit Details |
 |------|---------------|
-| <img src="screenshots/home.png" width="260"> | <img src="screenshots/habit.png" width="260"> |
+| <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202501/Screenshot_1783202272_nqay7r.png" width="260"> | <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202503/Screenshot_1783202339_at5k3f.png" width="260"> |
 
-| Statistics | Profile |
+| Statistics | Lessons |
 |------------|---------|
-| <img src="screenshots/stats.png" width="260"> | <img src="screenshots/profile.png" width="260"> |
+| <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202503/Screenshot_1783202441_hg5qvs.png" width="260"> | <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783202502/Screenshot_1783202301_xipu5n.png" width="260"> |
 
 </div>
 
