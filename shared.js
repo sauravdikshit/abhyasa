@@ -4,7 +4,7 @@
     '<nav id="navbar">' +
     '  <a href="index.html" class="nav-logo">' +
     '    <div class="nav-logo-icon">🌿</div>' +
-    '    <span class="nav-logo-text">Abhyasa<span>App</span></span>' +
+    '    <span class="nav-logo-text">Abhyasa<span>asa</span></span>' +
     '  </a>' +
     '  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">' +
     '    <span></span><span></span><span></span>' +
