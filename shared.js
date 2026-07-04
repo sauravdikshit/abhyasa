@@ -5,7 +5,7 @@
     '  <a href="index.html" class="nav-logo">' +
 '    <div class="nav-logo-icon">' +
 '      <img ' +
-'        src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1780486723/c8445862-fd4b-45d8-ac47-d380d101db9d_gbwmtf.webp" ' +
+'        src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783200786/abhyasa-logo_ixxxq3.png" ' +
 '        alt="Abhyasa Logo" ' +
 '        width="48" ' +
 '        height="48" ' +
@@ -33,7 +33,7 @@
     '  <div class="footer-inner">' +
     '     <div class="footer-brand">' +
 '      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
-'        <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1780486723/c8445862-fd4b-45d8-ac47-d380d101db9d_gbwmtf.webp" alt="Abhyasa Logo" width="42" height="42" style="border-radius:12px;" />' +
+'        <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783200786/abhyasa-logo_ixxxq3.png" alt="Abhyasa Logo" width="42" height="42" style="border-radius:12px;" />' +
 '        <span class="brand-name">Abhy<span>asa</span></span>' +
 '      </div>' +
 '      <p>Build better habits, one day at a time.</p>' +
