@@ -150,7 +150,7 @@ nav.scrolled {
 /* CTA button */
 .nav-links .cta-btn {
   background: linear-gradient(105deg, var(--accent-gold), #e2b34b);
-  color: #0A0A0A !important;
+  color: #FFF !important;
   font-weight: 700;
   padding: 9px 24px;
   border-radius: 100px;
