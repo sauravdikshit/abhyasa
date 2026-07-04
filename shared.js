@@ -32,7 +32,7 @@
     '  <div class="footer-inner">' +
     '     <div class="footer-brand">' +
 '      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
-'        <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783200786/abhyasa-logo_ixxxq3.png" alt="Abhyasa Logo" style="border-radius:12px;" />' +
+'        <img src="https://res.cloudinary.com/drqcxwcyc/image/upload/v1783200786/abhyasa-logo_ixxxq3.png" alt="Abhyasa Logo"  width="42" height="42" style="border-radius:12px;" />' +
 '        <span class="brand-name">Abhy<span>asa</span></span>' +
 '      </div>' +
 '      <p>Build better habits, one day at a time.</p>' +
