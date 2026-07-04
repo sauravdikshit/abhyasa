@@ -23,7 +23,7 @@
     '<footer>' +
     '  <div class="footer-inner">' +
     '    <div class="footer-brand">' +
-    '      <span class="brand-name">Abhyasa<span>App</span></span>' +
+    '      <span class="brand-name">Abhyasa<span>asa</span></span>' +
     '      <p>Build better habits, one day at a time.</p>' +
     '    </div>' +
     '    <div class="footer-col">' +
