@@ -4,7 +4,7 @@
     '<nav id="navbar">' +
     '  <a href="index.html" class="nav-logo">' +
     '    <div class="nav-logo-icon">🌿</div>' +
-    '    <span class="nav-logo-text">Abhyasa<span>asa</span></span>' +
+    '    <span class="nav-logo-text">Abhy<span>asa</span></span>' +
     '  </a>' +
     '  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">' +
     '    <span></span><span></span><span></span>' +
@@ -23,7 +23,7 @@
     '<footer>' +
     '  <div class="footer-inner">' +
     '    <div class="footer-brand">' +
-    '      <span class="brand-name">Abhyasa<span>asa</span></span>' +
+    '      <span class="brand-name">Abhy<span>asa</span></span>' +
     '      <p>Build better habits, one day at a time.</p>' +
     '    </div>' +
     '    <div class="footer-col">' +
